@@ -1,0 +1,98 @@
+.heading{
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #7847c6;
+  margin: 3vh 0;
+}
+
+.albumList{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: 75vh;
+  overflow-y: scroll;
+}
+
+.albumItem{
+  background-color: #7847c6;
+  color: white;
+  margin: 5px;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconDiv img{
+  cursor: pointer;
+}
+
+.buttonDiv{
+  margin: auto;
+  width: max-content;
+  margin-top: 20px;
+}
+
+.buttonDiv button{
+  background-color: #6617e5;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  padding: 3vh;
+  border: 1px solid #000;
+  border-radius: 15px;
+  top: 40%;
+  left: 27%;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.modal label{
+  font-size: 1.3em;
+  color: #7847c6;
+  font-weight: bold;
+}
+
+.modal input{
+  height: 4vh;
+  font-size: 1em;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.modal button{
+  width: 30%;
+  height: 4vh;
+  background-color: #6617e5;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
