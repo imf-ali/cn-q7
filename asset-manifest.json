@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cn-q7/static/css/main.af6609fa.css",
+    "main.js": "/cn-q7/static/js/main.44780b8d.js",
+    "index.html": "/cn-q7/index.html",
+    "main.af6609fa.css.map": "/cn-q7/static/css/main.af6609fa.css.map",
+    "main.44780b8d.js.map": "/cn-q7/static/js/main.44780b8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af6609fa.css",
+    "static/js/main.44780b8d.js"
+  ]
+}
