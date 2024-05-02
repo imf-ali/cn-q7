@@ -7,7 +7,7 @@ export const getAlbumThunk = createAsyncThunk('getAlbumThunk', async (args, thun
     const res = await axios.get('https://jsonplaceholder.typicode.com/albums');
     thunkApi.dispatch(setAlbums(res.data));
   } catch (err) {
-    setIsError(true);
+    thunkApi.dispatch(setIsError());
     console.log('Something went wrong');
   }
 })
