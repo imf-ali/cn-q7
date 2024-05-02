@@ -1,13 +1,20 @@
-import { useSelector } from "react-redux";
-import { albumState } from "../context/album";
+import { useDispatch, useSelector } from "react-redux";
+import { albumState, deleteAlbumThunk } from "../context/album";
 import styles from '../App.module.css';
-import icon from '../assets/edit.png';
+import editIcon from '../assets/edit.png';
+import deleteIcon from '../assets/delete.png';
 
 const AlbumList = ({ setShowModal, setAlbumItem }) => {
   const { albums } = useSelector(albumState);
+  const dispatch = useDispatch();
+
   const onEditClick = (album) => {
     setAlbumItem(album);
     setShowModal(true);
+  }
+
+  const onDeleteClick = (album) => {
+    dispatch(deleteAlbumThunk({ id: album.id }));
   }
 
   return (
@@ -17,7 +24,8 @@ const AlbumList = ({ setShowModal, setAlbumItem }) => {
           <div key={ind} className={styles.albumItem}>
             <div className={styles.title}>{album.title}</div>
             <div className={styles.iconDiv}>
-              <img onClick={() => onEditClick(album)} src={icon} />
+              <img onClick={() => onEditClick(album)} src={editIcon} />
+              <img onClick={() => onDeleteClick(album)} src={deleteIcon} />
             </div>
           </div>
         ))}

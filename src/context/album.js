@@ -49,6 +49,24 @@ export const updateAlbumThunk = createAsyncThunk('updateAlbumThunk', async (args
   }
 })
 
+export const deleteAlbumThunk = createAsyncThunk('deleteAlbumThunk', async (args, thunkApi) => {
+  try {
+    thunkApi.dispatch(setIsLoading(true));
+    await axios({
+      method: 'DELETE',
+      url: `https://jsonplaceholder.typicode.com/albums/${args.id}`,
+      data: {
+        userId: 1,
+        id: args.id,
+      }
+    });
+    thunkApi.dispatch(deleteAlbum({ id: args.id }));
+  } catch (err) {
+    setIsError(true);
+    console.log('Something went wrong');
+  }
+})
+
 const albums = createSlice({
   name: 'albums',
   initialState: {
@@ -80,11 +98,14 @@ const albums = createSlice({
         return album;
       })
     },
+    deleteAlbum: (state, action) => {
+      state.albums = state.albums.filter((album) => album.id!== action.payload.id);
+    }
   }
 });
 
 const albumReducer = albums.reducer;
-export const { setAlbums, setIsError, setIsLoading, addAlbum, updateAlbum } = albums.actions;
+export const { setAlbums, setIsError, setIsLoading, addAlbum, updateAlbum, deleteAlbum } = albums.actions;
 export const albumState = (state) => state.albumReducer;
 
 export default albumReducer;

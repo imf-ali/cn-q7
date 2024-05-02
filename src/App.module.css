@@ -30,8 +30,14 @@
   align-items: center;
 }
 
+.iconDiv{
+  display: flex;
+  height: 25%;
+}
+
 .iconDiv img{
   cursor: pointer;
+  margin: 0 5px;
 }
 
 .buttonDiv{
